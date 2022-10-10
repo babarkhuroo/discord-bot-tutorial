@@ -1,0 +1,18 @@
+{
+  "name": "discord-bot-tutorial",
+  "version": "1.0.0",
+  "description": "Discord bot tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Babar",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.3.0",
+    "dotenv": "^16.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1"
+  }
+}
