@@ -18,7 +18,6 @@ rest
   .catch(console.error)
 
 // for deleting all registered-commands
-
 // rest
 //   .put(
 //     Routes.applicationGuildCommands(

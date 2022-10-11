@@ -20,15 +20,46 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN)
 
-rest
-  .put(
-    Routes.applicationGuildCommands(
-      process.env.CLIENT_ID,
-      process.env.GUILD_ID
-    ),
-    { body: commands }
-  )
-  .then((data) =>
-    console.log(`Successfully registered ${data.length} application commands.`)
-  )
-  .catch(console.error)
+;(async () => {
+  try {
+    console.log(
+      `Started refreshing ${commands.length} application (/) commands.`
+    )
+
+    // for deploying commands in the guild they were created in
+    // ===============================================
+    // const data = await rest.put(
+    //   Routes.applicationGuildCommands(
+    //     process.env.CLIENT_ID,
+    //     process.env.GUILD_ID
+    //   ),
+    //   { body: commands }
+    // )
+
+    // for deploying commands globally (including DMs)
+    // ===============================================
+    const data = await rest.put(
+      Routes.applicationCommands(process.env.CLIENT_ID),
+      { body: commands }
+    )
+
+    console.log(
+      `Successfully reloaded ${data.length} application (/) commands.`
+    )
+  } catch (error) {
+    console.error(error)
+  }
+})()
+
+// rest
+//   .put(
+//     Routes.applicationGuildCommands(
+//       process.env.CLIENT_ID,
+//       process.env.GUILD_ID
+//     ),
+//     { body: commands }
+//   )
+//   .then((data) =>
+//     console.log(`Successfully registered ${data.length} application commands.`)
+//   )
+//   .catch(console.error)
