@@ -5,14 +5,7 @@ module.exports = {
     .setName('options')
     .setDescription('Information about the options provided.')
     .addStringOption((option) =>
-      option
-        .setName('input')
-        .setDescription('The input to echo back')
-        .addChoices(
-          { name: 'hello', value: 'hello wassup' },
-          { name: 'hi', value: 'hi wassup' },
-          { name: 'hey', value: 'hey wassup' }
-        )
+      option.setName('input').setDescription('The input to echo back')
     ),
   async execute(interaction) {
     const value = interaction.options.getString('input')
