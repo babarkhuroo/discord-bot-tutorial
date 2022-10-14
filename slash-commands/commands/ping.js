@@ -5,17 +5,29 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName('ping')
     .setNameLocalizations({
-      'en-US': 'ping',
-      'en-GB': 'nudge',
+      de: 'peng',
+      pl: 'świst',
     })
     .setDescription('Replies with Pong!')
     .setDescriptionLocalizations({
-      'en-US': 'Replies wid Pong!!!',
-      'en-GB': 'Replies wid Pong yea, innit!!!',
-    }),
+      de: 'Antwortet mit Pong',
+      pl: 'Odpowiedzi pong',
+    })
+    .setDMPermission(false),
   async execute(interaction) {
-    await interaction.reply('Pong!')
-    await wait(6000)
-    await interaction.editReply('Pong again!!!')
+    const localesName = {
+      de: 'pong in german',
+      pl: 'pong in polish',
+    }
+    const localesDescription = {
+      de: 'pong again in german',
+      pl: 'pong again in polish',
+    }
+    await interaction.reply(localesName[interaction.locale] ?? 'Pong!')
+    await wait(3000)
+    await interaction.editReply(
+      localesDescription[interaction.locale] ?? 'Pong again!!!'
+    )
+    // await interaction.deleteReply()  //for deleting original reply()
   },
 }

@@ -8,5 +8,7 @@ module.exports = {
     await interaction.reply(
       `Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}\nCreated at: ${interaction.guild.createdAt}\nVerification level: ${interaction.guild.verificationLevel}`
     )
+    // const msg = await interaction.fetchReply()
+    // console.log(msg)
   },
 }
