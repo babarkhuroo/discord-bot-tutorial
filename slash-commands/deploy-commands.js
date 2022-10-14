@@ -27,7 +27,7 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN)
     )
 
     // for deploying commands in the guild they were created in
-    // ===============================================
+    // ========================================================
     // const data = await rest.put(
     //   Routes.applicationGuildCommands(
     //     process.env.CLIENT_ID,

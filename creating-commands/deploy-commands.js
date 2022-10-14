@@ -17,14 +17,23 @@ const commands = [
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN)
 
+// for guild-based commands
+// rest
+//   .put(
+//     Routes.applicationGuildCommands(
+//       process.env.CLIENT_ID,
+//       process.env.GUILD_ID
+//     ),
+//     { body: commands }
+//   )
+//   .then((data) =>
+//     console.log(`Successfully registered ${data.length} application commands.`)
+//   )
+//   .catch(console.error)
+
+// For global commands
 rest
-  .put(
-    Routes.applicationGuildCommands(
-      process.env.CLIENT_ID,
-      process.env.GUILD_ID
-    ),
-    { body: commands }
-  )
+  .put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands })
   .then((data) =>
     console.log(`Successfully registered ${data.length} application commands.`)
   )
