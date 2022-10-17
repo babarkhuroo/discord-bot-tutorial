@@ -20,18 +20,30 @@ module.exports = {
       )
       .addComponents(
         new ButtonBuilder()
-          .setCustomId('primaryRow')
-          .setLabel('Click me here!')
-          .setStyle(ButtonStyle.Primary)
+          .setCustomId('secondary')
+          .setLabel('Click me, secondary!')
+          .setStyle(ButtonStyle.Secondary)
+          .setEmoji('854206837071151124')
+      )
+      .addComponents(
+        new ButtonBuilder()
+          .setCustomId('success')
+          .setLabel('Click me, success!')
+          .setStyle(ButtonStyle.Success)
+      )
+      .addComponents(
+        new ButtonBuilder()
+          .setCustomId('danger')
+          .setLabel('Click me, danger!')
+          .setStyle(ButtonStyle.Danger)
           .setDisabled(true)
       )
 
     const rowTwo = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
-        .setCustomId('primaryTwo')
-        .setLabel('Click me too!')
-        .setStyle(ButtonStyle.Primary)
-        .setEmoji('854206837071151124')
+        .setLabel('Click me, link!')
+        .setStyle(ButtonStyle.Link)
+        .setURL('https://google.com')
     )
 
     const embed = new EmbedBuilder()
