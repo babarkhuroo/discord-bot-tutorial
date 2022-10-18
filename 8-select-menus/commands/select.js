@@ -14,7 +14,9 @@ module.exports = {
       new SelectMenuBuilder()
         .setCustomId('select')
         .setPlaceholder('Nothing selected')
-        .addOptions(
+        .setMinValues(2)
+        .setMaxValues(3)
+        .addOptions([
           {
             label: 'Select me',
             description: 'This is a description',
@@ -24,8 +26,13 @@ module.exports = {
             label: 'You can select me too',
             description: 'This is also a description',
             value: 'second_option',
-          }
-        )
+          },
+          {
+            label: 'I am also an option',
+            description: 'This is a description as well',
+            value: 'third_option',
+          },
+        ])
     )
 
     const embed = new EmbedBuilder()
