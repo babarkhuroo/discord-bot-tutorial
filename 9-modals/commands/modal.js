@@ -22,18 +22,18 @@ module.exports = {
       .setLabel("What's your favorite color?")
       // Short means only a single line of text
       .setStyle(TextInputStyle.Short)
-      .setPlaceholder('Enter your name!')
+      .setPlaceholder('Enter your favorite color!')
       .setMinLength(3)
-      .setMaxLength(20)
-      .setValue('spiderman')
+      .setMaxLength(10)
+      .setValue('blue')
 
     const hobbiesInput = new TextInputBuilder()
       .setCustomId('hobbiesInput')
       .setLabel("What's some of your favorite hobbies?")
       // Paragraph means multiple lines of text.
       .setStyle(TextInputStyle.Paragraph)
-      .setPlaceholder('Enter your comment')
-      .setMinLength(1)
+      .setPlaceholder('Enter your hobbies')
+      .setMinLength(5)
       .setMaxLength(280)
 
     // An action row only holds one text input,
