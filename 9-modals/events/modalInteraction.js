@@ -2,6 +2,9 @@ module.exports = {
   name: 'interactionCreate',
   async execute(interaction) {
     if (!interaction.isModalSubmit()) return
-    console.log(interaction)
+
+    await interaction.reply({
+      content: 'Your submission was received successfully!',
+    })
   },
 }
